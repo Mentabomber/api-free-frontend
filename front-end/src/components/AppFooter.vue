@@ -17,6 +17,7 @@ export default {
     <footer>
         <div class="container-fluid text-align-center">
             <h1>Footer</h1>
+            <router-link :to="{ name: 'home' }">Torna alla home!</router-link>
         </div>
     </footer>
     </template>

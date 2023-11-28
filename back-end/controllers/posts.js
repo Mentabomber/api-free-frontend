@@ -70,9 +70,6 @@ async function show(req, res){
     
 async function showAll(req, res){
 
-    const dataFilter = req.body;
-    console.log(dataFilter.content);
-    if (dataFilter === "") {
         const showAllPosts = await prisma.post
         .findMany({
             include: {
@@ -85,52 +82,7 @@ async function showAll(req, res){
                 user: true,
             }
         })
-        
-
         return res.json(showAllPosts);
-    }else if(dataFilter.hasOwnProperty("published")){
-        const showAllPosts = await prisma.post
-        .findMany({
-            where: {
-                published: dataFilter.published
-            },
-            include: {
-                tags: {
-                    select: {
-                        type: true,
-                    },
-                },
-                category: true,
-                user: true,
-            }
-            
-        })
-      
-
-        return res.json(showAllPosts);
-    }else if(dataFilter.hasOwnProperty("content")){
-        const showAllPosts = await prisma.post
-        .findMany({
-            where: {
-                content: { contains: dataFilter.content }
-            },
-            include: {
-                tags: {
-                    select: {
-                        type: true,
-                    },
-                },
-                category: true,
-                user: true,
-            }
-            
-        })
-   
-
-        return res.json(showAllPosts);
-    }
-    
-    
 
 }
 

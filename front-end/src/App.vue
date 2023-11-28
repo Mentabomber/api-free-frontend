@@ -30,7 +30,7 @@ export default {
 <template>
   <div class="contenitore">
     <AppHeader />
-    <AppHome />
+    <router-view></router-view>
     <AppFooter />
   </div>
 </template>
