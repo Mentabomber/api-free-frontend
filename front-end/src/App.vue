@@ -45,7 +45,8 @@ export default {
 }
 
 .contenitore {
+  height: 700px;
   background-color: grey;
-  height: 100vh;
+  position: relative;
 }
 </style>

@@ -37,7 +37,7 @@ export default {
                 <!-- da trasformare in router links -->
                 <ul>
                     <li>
-                        <a href="">Crea un nuovo post</a>
+                        <router-link :to="{ name: 'newPost' }">Crea un nuovo post</router-link>
                     </li>
                     <li>
                         <router-link :to="{ name: 'postsList' }">Vedi tutti i tuoi post</router-link>

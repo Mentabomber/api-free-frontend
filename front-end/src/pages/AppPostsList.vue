@@ -14,7 +14,7 @@ export default {
     },
     mounted() {
         
-            axios.get(store.API_URL_show).then(res => {
+            axios.get(store.API_URL).then(res => {
                 store.posts = res.data;
             }).catch(err => {
             console.error("Axios request error:", err);
@@ -33,7 +33,6 @@ export default {
             </div>
 
             <div>
-                <!-- da trasformare in router links -->
                 <ul>
                     <li v-for="(post, index) in store.posts" :key="index">
                         <router-link :to="{ name: 'post', params: {  slug: post.slug }}">{{post.title}}</router-link>

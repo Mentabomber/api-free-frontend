@@ -18,7 +18,7 @@ export default {
     mounted() {
         const slug = this.$route.params.slug;
         console.log(slug);
-        axios.get(store.API_URL_show + slug).then(res => {
+        axios.get(store.API_URL + slug).then(res => {
             console.log(res.data);
                 store.post = res.data;
             }).catch(err => {
